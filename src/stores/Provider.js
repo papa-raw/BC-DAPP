@@ -1,6 +1,8 @@
 import { observable, action } from 'mobx'
 import Web3 from 'web3';
 import store from './Root'
+import * as moment from 'moment';
+
 
 const schema = {
     BondedToken: require('../abi/BondedToken'),
@@ -40,7 +42,7 @@ class ProviderStore {
     async getBlockTime(blockNumber) {
         const blockData = await this.web3.eth.getBlock(blockNumber)
         const date = new Date(blockData.timestamp*1000)
-        return date.toUTCString()
+        return moment(date).format('DD.MM - HH:mm');
     }
 
     // get blockHash from blockNumber
