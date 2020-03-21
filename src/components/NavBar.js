@@ -28,6 +28,8 @@ const SelectedMenuItem = styled.div`
   color: var(--nav-text-dark);
   line-height: 24px;
   padding: 0px 10px;
+  font-weight: 500;
+  letter-spacing: 1px;
   cursor: pointer;
 `
 
